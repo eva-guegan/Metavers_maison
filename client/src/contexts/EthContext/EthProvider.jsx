@@ -13,6 +13,7 @@ function EthProvider({ children }) {
         const accounts = await web3.eth.requestAccounts();
         const networkID = await web3.eth.net.getId();
         const { abi } = artifact;
+
         let address, contract;
         try {
           address = artifact.networks[networkID].address;
@@ -30,7 +31,7 @@ function EthProvider({ children }) {
   useEffect(() => {
     const tryInit = async () => {
       try {
-        const artifact = require("../../contracts/SimpleStorage.json");
+        const artifact = require("../../contracts/NFTMetaverse.json");
         init(artifact);
       } catch (err) {
         console.error(err);

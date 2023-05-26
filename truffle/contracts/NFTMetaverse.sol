@@ -31,4 +31,16 @@ contract NFTMetaverse {
         maisons[totalSupply].owner = msg.sender;
         totalSupply++;
     }
+
+    function getMaxSupply() public view returns (uint256) {
+        return maxSupply;
+    }
+
+    function getTotalSupply() public view returns (uint256) {
+        return totalSupply;
+    }
+
+    function getCost() public view returns (uint256) {
+        return cost;
+    }
 }
